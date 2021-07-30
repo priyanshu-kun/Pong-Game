@@ -6,38 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="script.js"></script>
     <style>
-        @font-face {
-            font-family: "DebugFreeTrial-MVdYB.otf";
-            src: url("font/DebugFreeTrial-MVdYB.otf");
-            font-weight: bold;
-        }
-        body{
-            font-family: "DebugFreeTrial-MVdYB.otf";
-            background-color: rgb(0, 0, 0);
-        }
-        #pong{
-            border: 2px solid #FFF;
-            position: absolute;
-            margin :auto;
-            top:0;
-            right:0;
-            left:0;
-            bottom:0;
-            border-radius: 10px;
-        }
-        #title {
-            position: absolute;
-            top: 50%;
-            color: #FFF;
-            font-size: 16rem;
-            transform: rotate(-90deg) translateX(65%);
-            
-        }
+      *,
+      *::after,
+      *::before {
+        padding: 0;
+        margin: 0;
+      }
+      @font-face {
+        font-family: 'DebugFreeTrial-MVdYB.otf';
+        src: url('font/DebugFreeTrial-MVdYB.otf');
+        font-weight: bold;
+      }
+      body {
+        font-family: 'DebugFreeTrial-MVdYB.otf';
+        background-color: rgb(255, 255, 255);
+      }
+      #pong {
+        box-shadow: 0 0 3px rgb(0, 0, 0);
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        margin: auto;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        border-radius: 10px;
+      }
+      #title {
+        position: absolute;
+        top: 50%;
+        color: rgb(0, 0, 0);
+        font-size: 16rem;
+        transform: rotate(-90deg) translate(25%, 0);
+      }
+      #button {
+        float: right;
+        margin: 30px 50px 0 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        outline: none;
+      }
+      p {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.2rem;
+        color: #000;
+      }
+      p span {
+        font-size: 2rem;
+        
+      }
     </style>
     <title>Pong - The classic game</title>
   </head>
   <body>
-      <h1 id="title">PONG</h1>
+    <h1 id="title">PONG</h1>
+    <p>press <span>F</span> key to play and pause the game</p>
     <canvas id="pong" height="400" width="600"></canvas>
+    <button id="button">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+            width="30" 
+            height="30" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="#000" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            class="feather 
+            feather-volume-x">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15">
+            </line>
+        </svg>
+    </button>
   </body>
 </html>
