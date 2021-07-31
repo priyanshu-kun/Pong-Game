@@ -309,11 +309,26 @@ function game() {
     render();
 }
 // number of frames per second
-let framePerSecond = 50;
+// let framePerSecond = 50;
+let speed = 100
+let lastPaintTime = 0
 
 
 /**
  * Game loop
  */
 //call the game function 50 times every 1 Sec
-let loop = setInterval(game, 1000 / framePerSecond);
+// let loop = setInterval(game, 1000 / framePerSecond);
+
+
+// Game functions
+const main = (ctime) => {
+    window.requestAnimationFrame(main)
+    if((ctime - lastPaintTime)/1000 < 1/speed) {
+        return
+    } 
+    lastPaintTime = ctime
+    game()
+}
+
+window.requestAnimationFrame(main)
